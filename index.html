@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Kółko i krzyżyk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h1>Kółko i krzyżyk</h1>
+        <div>
+            <div class="szachownica">
+                <section class="pole" pole_numer="0"></section>
+                <section class="pole" pole_numer="1"></section>
+                <section class="pole" pole_numer="2"></section>
+                <section class="pole" pole_numer="3"></section>
+                <section class="pole" pole_numer="4"></section>
+                <section class="pole" pole_numer="5"></section>
+                <section class="pole" pole_numer="6"></section>
+                <section class="pole" pole_numer="7"></section>
+                <section class="pole" pole_numer="8"></section>
+            </div>
+        </div>
+        <div class="ustawienia">
+            <p></p>
+            <p id="wynik"></p>
+            <p></p>
+            <button id="restart">Restart</button>
+            <p></p>
+            <form id="tryb-gry">
+                <label for="tryb">Tryb gry:</label>
+                <select id="tryb">
+                    <option value="dwoch_graczy">Dwóch graczy</option>
+                    <option value="bot">Gra z botem</option>
+                </select>
+                <p></p>
+                <div id="trudnosc" style="display: none;">
+                    <label for="bot-trudnosc">Poziom trudności:</label>
+                    <select id="bot-trudnosc">
+                        <option value="latwy">Łatwy</option>
+                        <option value="trudny">Trudny</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>    
+    <script src="third_approach.js"></script>
+</body>
+</html>
