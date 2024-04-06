@@ -1,5 +1,0 @@
-Do zadania dołączam komentarz, z uwagi na pojawianie się pewnych błędów w konsoli podczas wyświetlania strony na hostingu używanym przeze mnie.
-
-Jak widać, błędy nie wynikają jednak z mojej implementacji, a z problemami przy dodawaniu znaku wodnego na stronie (błąd samego hostingu)
-
-Na potwierdzenie, wysyłam zrzuty ekranu pokazujące przyczynę błędu, a także porówanie konsoli, przy otwieraniu pliku lokalnie, oraz na serwerze.
