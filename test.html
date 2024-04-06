@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Container Layout</title>
+<style>
+  .container {
+  display: flex;
+}
+
+.left-container {
+  width: 60%;
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+}
+
+.left-container img {
+  max-width: 100%; /* Ensure image doesn't exceed container width */
+  height: auto;
+}
+
+.right-container {
+  width: 40%; /* Adjust as needed, this takes up the remaining space */
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    flex-direction: column; /* Stack items vertically */
+  }
+  .left-container, .right-container {
+    width: 100%; /* Both containers take full width */
+  }
+}
+
+</style>
+</head>
+<body>
+    <h1>Nagłówek</h1>
+<div class="container">
+  <div class="left-container">
+    <img src="miejski.jpg" alt="Your Image">
+  </div>
+  <div class="right-container">
+    <p>Your text goes here...</p>
+  </div>
+</div>
+</body>
+</html>
