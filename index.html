@@ -8,200 +8,361 @@
     </head>
     <body>
 
+        <!-- Statyczny nagłówek strony - szary pasek -->
         <header >
             <div class="header-zawartosc">
-                <div class="header-tytul" onclick="powrot()">
+                <div class="header-tytul tytul-pl" onclick="powrot()">
                     <h1>Kategorie rowerów</h1>
                 </div>
+                <div class="header-tytul tytul-en" style="display: none;" onclick="powrot()">
+                    <h1>Types of bikes</h1>
+                </div>
                 <div  onclick="pokazMenuLista()" class="przycisk-menu" >
-                    <img src="list.svg" width="30px" >
+                    <img src="list.svg" width="30px" alt="Przycisk rozwijanego menu">
                 </div>
             </div>
             <div class="menu">
-                <a href="#" onclick="wyswietlRower('Triatlonowy')">Triatlonowy</a>
-                <a href="#" onclick="wyswietlRower('Szosowy')">Szosowy</a>
-                <a href="#" onclick="wyswietlRower('Transportowy')">Transportowy</a>
-                <a href="#" onclick="wyswietlRower('Miejski')">Miejski</a>
-                <a href="#" onclick="wyswietlRower('Gravel')">Gravel</a>
-                <a href="#" onclick="wyswietlRower('XC')">XC</a>
-                <a href="#" onclick="wyswietlRower('Trail')">Trail</a>
-                <a href="#" onclick="wyswietlRower('Enduro')">Enduro</a>
-                <a href="#" onclick="wyswietlRower('Downhill')">Downhill</a>
+                <a href="#" onclick="wyswietlRower('Triatlonowy')" id="przycisk_triatlonowy" alt="fck">Triatlonowy</a>
+                <a href="#" onclick="wyswietlRower('Szosowy')" id="przycisk_szosowy">Szosowy</a>
+                <a href="#" onclick="wyswietlRower('Transportowy')" id="przycisk_transportowy">Transportowy</a>
+                <a href="#" onclick="wyswietlRower('Miejski')" id="przycisk_miejski">Miejski</a>
+                <a href="#" onclick="wyswietlRower('Gravel')" id="przycisk_gravel">Gravel</a>
+                <a href="#" onclick="wyswietlRower('XC')" id="przycisk_xc">XC</a>
+                <a href="#" onclick="wyswietlRower('Trail')" id="przycisk_trail">Trail</a>
+                <a href="#" onclick="wyswietlRower('Enduro')" id="przycisk_enduro">Enduro</a>
+                <a href="#" onclick="wyswietlRower('Downhill')" id="przycisk_downhill">Zjazdowy</a>
             </div>
         </header>
 
-        <div class="menu-list">
-            <div class="menu-element" onclick="wyswietlRower('Triatlonowy')"><p>Triatlonowy</p></div>
-            <div class="menu-element" onclick="wyswietlRower('Szosowy')"><p>Szosowy</p></div>
-            <div class="menu-element" onclick="wyswietlRower('Transportowy')"><p>Transportowy</p></div>
-            <div class="menu-element" onclick="wyswietlRower('Miejski')"><p>Miejski</p></div>
-            <div class="menu-element" onclick="wyswietlRower('Gravel')"><p>Gravel</p></div>
-            <div class="menu-element" onclick="wyswietlRower('XC')"><p>XC</p></div>
-            <div class="menu-element" onclick="wyswietlRower('Trail')"><p>Trail</p></div>
-            <div class="menu-element" onclick="wyswietlRower('Enduro')"><p>Enduro</p></div>
-            <div class="menu-element" onclick="wyswietlRower('Downhill')"><p>Downhill</p></div>
+        <!-- Zawartość strony - wszystko co pomiędzy szarymi paskami -->
+        <main>
+            <!-- Opcjonalne menu rozwijane dla stron poniżej 1000px -->
+            <div class="menu-list">
+                <div class="menu-element" onclick="wyswietlRower('Triatlonowy')" id="pasek_triatlonowy">Triatlonowy</div>
+                <div class="menu-element" onclick="wyswietlRower('Szosowy')" id="pasek_szosowy">Szosowy</div>
+                <div class="menu-element" onclick="wyswietlRower('Transportowy')" id="pasek_transportowy">Transportowy</div>
+                <div class="menu-element" onclick="wyswietlRower('Miejski')" id="pasek_miejski">Miejski</div>
+                <div class="menu-element" onclick="wyswietlRower('Gravel')" id="pasek_gravel">Gravel</div>
+                <div class="menu-element" onclick="wyswietlRower('XC')" id="pasek_xc">XC</div>
+                <div class="menu-element" onclick="wyswietlRower('Trail')" id="pasek_trail">Trail</div>
+                <div class="menu-element" onclick="wyswietlRower('Enduro')" id="pasek_enduro">Enduro</div>
+                <div class="menu-element" onclick="wyswietlRower('Downhill')" id="pasek_downhill">Zjazdowy</div>
+            </div>
+    
+
+            <!-- Zmieniająca się zawartość strony -->
+            <div class="panel-kart">
+                <div class="rower active" id="Powitalny">
+                    <h2>Witaj na mojej stronie!</h2>
+                    <div class="tresc">
+                        <div class="tekst-rower">
+                            <h4>PL</h4>
+                            <div>
+                                Moja strona poświęcona jest tematowi bliskiemu mojemu sercu - rowerom.
+                                Ponieważ w śród osób odwiedzających mogą znajdować sie osoby
+                                które nie znają języka Polskiego, to na dole strony jest możliwość
+                                jego zmiany na język Angielski.
+                            </div>
+                            <h4>EN</h4>
+                            <div>
+                                My website is about a topic which have a special place in my heart - bikes.
+                                However, I know that some people visitnig my website might not speak Polish,
+                                especially for them at the bottom of the website there is a special button, 
+                                to switch to English.
+                            </div>
+                        </div>
+                        <div class="zdjecie-rower">
+                            <img src="biking.gif" alt="Animowany giph osoby jadącego na rowerze">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="rower" id="Triatlonowy">
+                    <h2 class="naglowek-pl">Triatlonowy</h2>
+                    <h2 class="naglowek-en" style="display: none;">Triathlon</h2>
+                    <div class="tresc">
+                        <div class="zdjecie-rower">
+                            <img src="triatlonowy.jpg" alt="Rower Triatlonowy">
+                        </div>
+                        <div class="tekst-rower">
+                            <div class="tekst-pl">
+                                <p>Jest to odmiana roweru szosowego, przystosowana do zawodów triatlonowych. Rowery triatlonowe nastawione są na 
+                                    pokonywanie jak najdłuższych dystansów w możliwie któtkim czasie. Z tego powodu większy nacisk kładzie się nie 
+                                    na prędkość, lecz na wydajnośc jazdy, w tym  na aerodynamikę. Z tego powodu bardzo łatwo rozpoznać rower triatlonowy 
+                                    gdyż posiada wypełnienia w kołach a także ramę, która przypomina bardziej skrzydło (jej przekrój jest owalem).
+                                </p>
+                            </div>
+                            <div class="tekst-en" style="display: none;">
+                                <p>It is a special type of road bike, adjusted to thriatlon copetitions. Construction of those bikes if focused
+                                    on riding distances as long as possible with time in mind. That's why, in those bikes speed is less important
+                                    than efficiency. Therefore elements such as aerodynamics are much more important. This also contribute to 
+                                    recognizability of those bikes, as they are the only one which typically have frame and steering elemnts which
+                                    use oval shape.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="rower" id="Szosowy">
+                    <h2 class="naglowek-pl">Szosowy</h2>
+                    <h2 class="naglowek-en" style="display: none;">Road bike</h2>
+                    <div class="tresc">
+                        <div class="zdjecie-rower">
+                            <img src="szosowy.jpg" alt="Rower Szosowy">
+                        </div>
+                        <div class="tekst-rower">
+                            <div class="tekst-pl">
+                                <p>Z uwagi na dłuższą obecność na rynku, ten typ roweru znany jest każdemu z nas. Rowerem szosowym określa się rower, z 
+                                    cienkimi, aerodynamicznymi oponami, wysokimi przełożeniami i lekką konstukcją oraz obowiazkowym wręcz 
+                                    barankiem (specyficznymi rączkami kierownicy które zmuszają do przyjęcia skulonej, opływowej pozycji 
+                                    i wyglądają jak rogi barana). Pozwala osiągać wielkie prędkości i nadaje się do jazdy po utwardzonych drogach.
+                                </p>
+                            </div>
+                            <div class="tekst-en" style="display: none;">
+                                <p>This type of bike is propably known to everyone - thin wheels and tires, high gear ratio, light contruction - 
+                                    that's what defines road bike. Easily recognizable with curved handlebars, helping on long rides this type of sport bike
+                                    is on the market for more than a century. Compared to thriatlon bike, this machine is more oriented towards
+                                    short-time performance, and efficiency is a secondary factor here.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="rower" id="Transportowy">
+                    <h2 class="naglowek-pl">Transportowy</h2>
+                    <h2 class="naglowek-en" style="display: none;">Cargo bike</h2>
+                    <div class="tresc">
+                        <div class="zdjecie-rower">
+                            <img src="transportowy.jpg" alt="Rower Transportowy">
+                        </div>
+                        <div class="tekst-rower">
+                            <div class="tekst-pl">
+                                <p> Odmiana rowrów, która w ostatnich latach zyskuje na popularności są tak zwane rowery transportowe. Często 
+                                    są one rozbudowaną wersją rowerów miejskich, z nacisiem na możliwość transportu osób lub towaru. Przydatne szczeólnie 
+                                    w mieście oferują dużą przestrzeń załadunkową niejednokrotnie zabudowaną. Choć nie są w stanie zawtąpić samochodu
+                                    w każdej sytuacji, to biorąc pod uwagę wręcz obowiązkowe wspomanie, sprawdzą się idealnie jako transport dla 
+                                    dzieci do przedszkola lub zamiast samochodu gdy trzeba będzie pojechać do sklepu po zakupy.
+                                </p>
+                            </div>
+                            <div class="tekst-en" style="display: none;">
+                                <p>Those types of bikes, although not new in concept have their ow renesaince now. Cargo bikes, as the names imply,
+                                    are designed around luggage which they should be able to trasport. Depending on the need of the customer, the loading
+                                    area can have different sizes and shapes. Additional popularity in recent years are partially due to electrification of
+                                    those bikes, making it a good alternative for car in citi commute and general life, where one might need to transport
+                                    kids to school, but do grocieries on the way back.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="rower" id="Miejski">
+                    <h2 class="naglowek-pl">Miejski</h2>
+                    <h2 class="naglowek-en" style="display: none;">City bike</h2>
+                    <div class="tresc">
+                        <div class="zdjecie-rower">
+                            <img src="miejski.jpg" alt="Rower Miejski">
+                        </div>
+                        <div class="tekst-rower">
+                            
+                            <div class="tekst-pl">
+                                <p>Dla niewprawnego oka, rower ten 
+                                    będzie najpewniej określany jako "damka" - gdyż stawia na komfort jazdy, i niejednokrotnie oferuję ramę z 
+                                    średnim lub niskim przekrokiem. Dla rowerów miejkich typowe jest też dodatkowe wyposażenie. Światła, dzwonek 
+                                    blokada rowerowa lub nóżka to nic szczególnego. Bagażniki też są tutaj często stosowane. Ponadto, w celu zmiejszenia zaangażowania w dbanie o rower  typowe jest stosowanie rozwiązań mniej podatnych na uszkodzenia, nawet celem wydajność. Często spotamy się z  przerzutkami w piaście oraz napędem paskowych w droższych konstrukcjach. W odmianie rowerów popularnej w Holandii  (tzw. rowery holenderskie) typowe jest też używanie piast z wbuduwanym hamulcem używanym poprzez przekręcenie 
+                                    pedałów w tył.
+                                </p>
+                            </div>
+                            <div class="tekst-en" style="display: none;">
+                                <p>City bikes are - as name suggest - suted for more 'normal' environment. Instad of focusing on cargo or performance
+                                    city bikes are designed with human in mid. Therefore, this category is dominated by additional equipment, which is 
+                                    designed to make your jurney as safe and pleasant as possible. This mean, that fenders are a standard, along with bell
+                                    lights and reflective elements which further imporve biker's visibility. 
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="rower" id="Gravel">
+                    <h2 class="naglowek-pl">Gravel</h2>
+                    <h2 class="naglowek-en" style="display: none;">Gravel</h2>
+                    <div class="tresc">
+                        <div class="zdjecie-rower">
+                            <img src="gravel.jpg" alt="Rower Gravel">
+                        </div>
+                        <div class="tekst-rower">
+                            <div class="tekst-pl">
+                                <p>Najnowszy twór w świecie rowerów. Szczególną charakterystyką tych rowerów jest próba połączenia największych 
+                                    skrajności - rowerów Enduro i Szosowych - w celu stworzenia bardziej wszechstronnej maszyny. Rezultatem, jest 
+                                    rower, którego rama jest lekke i opływowa, natomiast napęd i opony umożliwiaj jazdę po nieutwardzonych nawierzchniach. 
+                                    Dzięki temu mamy większą dowolność w wyborze trasy, i niestraszne są nam nieutwardzone ścieżki leśnie, a przy tym 
+                                    nie tracimy zalet rowerów szosowych takich jak niskie opory toczenia czy opływowość. Takie rowery świetnie sprawdzaja 
+                                    sie również na dłuższych wycieczkach, gdyż często posiadają dodatkowe mocowania na bagaż umożliwiajc jazdy na długie 
+                                    trasy ze wszystkimi potrzebnymi rzeczami.
+                                </p>
+                            </div>
+                            <div class="tekst-en" style="display: none;">
+                                <p>
+                                    This is quite unusual type of bike, which was introduced only recently on the market, but already was able to gain
+                                    crow of lovers and haters. This is gravel bike, which in theory should allow to combine the best of both worlds.
+                                    Machine like this, are usually defined by cokpit from road bike, combined with slightly thicker tires and drivetrain
+                                    straight from enduro/trail bike. This allows to have more versitile machine, which can handle asphald and dirt equally 
+                                    well.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="rower" id="XC">
+                    <h2 class="naglowek-pl">XC - crosscountry</h2>
+                    <h2 class="naglowek-en" style="display: none;">Crosscountry</h2>
+                    <div class="tresc">
+                        <div class="zdjecie-rower">
+                            <img src="xc.jpg" alt="Rower Cross Country (XC)">
+                        </div>
+                        <div class="tekst-rower">
+                            
+                            <div class="tekst-pl">
+                                <p>Rowery crossowe, tzw. XC (od nazwy zawodów dla których zostały przygotowane) są najniższą z katerorii rowerów 
+                                    które zaliczane są do rowerów górskich. Ponieważ wywodzą sie z zawodów przełajowych ich charakterystyka 
+                                    odpowiada rowerom zawodniczym. Mamy wiec minimalną amortyzację (przez lata była to tylko amortyzacja na przedni 
+                                    widelec), duże, lekkei koła o niskich oporach toczenia, a także lekką i wąska ramę. Tutaj zauważalnie inny jest 
+                                    też kąt nachylenia widelca, który wymusza większe pochylenie, trochę jak na rowerach szosowych. Cechą szczególną tych
+                                    maszyn jest również ich niska waga.
+                                </p>
+                            </div>
+                            <div class="tekst-en" style="display: none;">
+                                <p>
+                                    Crosscountry bikes have their names from comptition in which those bikes were used. Originally they were just
+                                    typical 'mountain bikes'. However, over time the need for light but capable bikes shaped what XC bikes are today - 
+                                    light, hartail or full suspension bikes, oriented towards speed and agilibility. Here, wait to performance ratio
+                                    is high on priority list, so it's typical to use the lightes possible parts, which still can deliver performance
+                                    in light offroad terrain.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="rower" id="Trail">
+                    <h2 class="naglowek-pl">Trail - rower szlakowy</h2>
+                    <h2 class="naglowek-en" style="display: none;">Trail bike</h2>
+                    <div class="tresc">
+                        <div class="zdjecie-rower">
+                            <img src="trail.jpg" alt="Rower Trailowy">
+                        </div>
+                        <div class="tekst-rower">
+                            
+                            <div class="tekst-pl">
+                                <p>Rowery trailowe przypominają najbardziej rowery enduro. Stawiaja one jednak bardziej nacisk na długość trasy 
+                                    i mobilność niż możliwości pokonywania najtrudniejszych przeszkód. Z tego powodu często są też tańsze, gdyż użyte 
+                                    komponenty maja mniejsze wymagania wytrzymałościowe a w konsekwencji sprawiają, że rower jest też lżejszy. 
+                                    Dzięki temu stanowią świetną alternatywę dla zarówno rowerów XC (od których są bardziej wszechstronne, gdyż 
+                                    umożliwiaja jazdę w trudniejszym terenie) jak i Enduro (zwględem których są lżejsze i tańsze, a geometria jest 
+                                    mniej agresywna i wygodniejsza na długie przejażdżki).
+                                </p>
+                            </div>
+                            <div class="tekst-en" style="display: none;">
+                                <p>Trail bikes are often confused with XC or enduro bikes. It's not suprising, as they have a lot in common with both. 
+                                    For average laik, Trail bikes can be summarized as a 'light version' of enduro bikes. They offer much more capabilities
+                                    than XC bikes providing more aggresive position and bigger suspension. However, with those bikes weight, and abilitiy to
+                                    ride for long hours is still high on the list, making them less robust and not prepared to ride on all tracks.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="rower" id="Enduro">
+                    <h2 class="naglowek-pl">Enduro</h2>
+                    <h2 class="naglowek-en" style="display: none;">Enduro bike</h2>
+                    <div class="tresc">
+                        <div class="zdjecie-rower">
+                            <img src="enduro.jpg" alt="Rower Enduro">
+                        </div>
+                        <div class="tekst-rower">
+                            
+                            <div class="tekst-pl">
+                                <p>Rowery enduro służą do jazdy w trudnym terenie z zachowaniem możliwości jazdy zarówno zjazdowej jaki podjazdowej. 
+                                    Mocne hamulce, duży skok amortyzacji i opony z agresywnym bieżnikiem gwarantują większą kontrolę podczas zjazdów, 
+                                    w porównaniu do maszyn Trailowych. W utrzymaniu stabilności pomaga bardziej skośny kąd przedniego widelca. Natomiast 
+                                    w przeciwieństiwe do rowerów Downhillowych, oferują one szeroki zakres przełożeń i bardziej pionowa pozycję podzczas 
+                                    siedzenia w celu umożliwienia dłuższych przejazdów i pokonywania długich tras górskich.
+                                </p>
+                            </div>
+                            <div class="tekst-en" style="display: none;">
+                                <p>
+                                    Enduro bikes, are often considered the ultimate mountain bikes. They provide a lot of possibilities in terms of terrain
+                                    where they can enter, and due to it's strong frame and suspension can withstand rocks, jumps and roots. In comparison with 
+                                    downhill bikes, the have steeper head anngle, and can be easily recognized by big suspension with full cassete, with 
+                                    usually 11 or 12 gears.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="rower" id="Downhill">
+                    <h2 class="naglowek-pl">Zjazdowy</h2>
+                    <h2 class="naglowek-en" style="display: none;">Downhill</h2>
+                    <div class="tresc">
+                        <div class="zdjecie-rower">
+                            <img src="downhill.jpg" alt="Rower Downhill">
+                        </div>
+                        <div class="tekst-rower">
+                            
+                            <div class="tekst-pl">
+                                <p>Rowery downhillowe, zgodnie z nazwą służą tylko do jednego celu - jazdy w dół. Z tego powodu wszystkie elementy 
+                                    konstrukcyjne i rozwiązania techniczne mają na celu poprawę doświadczenia ze zjazdów. Typowo, rowery te wyposażone są 
+                                    olbrzmi przedni amortyzator, przypominający ten który możemy znaleźć w motorach crossowych. Ponieważ maszyny te 
+                                    są ciężkie i napędzane siłą grawitacji przerzutki i napęd są tutaj słabo rozbudowane i służą bardziej przejazdom 
+                                    na krótkich dystansach pomiędzy spadkami, lub na koniec zjazdu do wyciągu.
+                                </p>
+                            </div>
+                            <div class="tekst-en" style="display: none;">
+                                <p>
+                                    Downhill bikes, as the name imply, have only one purpose - help you to get down as fast as possible, regardless
+                                    of the obstacle on your way. This impacts the overall look and built of those bikes, making them easily recognazible. 
+                                    Usually those machnes are have big front suspension, similar to motorcross motorcycle, only a few gear at the back and
+                                    sittng position moved to the back.
+                                </p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+    
+            <!-- Popup gdzie wyświetlam potencjalne ciasteczka -->
+            <div id="popupCookie" class="cookie">
+                <div class="cookie-zawartosc">
+                    <div class="tekst-na-srodku">
+                        <p>Ta strona nie wykorzystuje żadnych plików cookies, ale gdyby
+                            to się zmieniło, to tutaj była by o tym informacja</p>
+                    </div>
+                    <br>
+                    <div class="tekst-na-srodku">
+                        <button id="przyciskRozumiem">Rozumiem</button>
+                    </div>
+                </div>
+            </div>
+    
+            <script src="functionality.js"></script>
+        </main>
+
+        <!-- Pasek na dole z możliwością wyboru odpowiedniego języka -->
+        <div class="pasek-informacyjny">
+            <div class="jezyki">
+                <a onclick="zmienTekst('PL')">PL</a>
+                <a onclick="zmienTekst('EN')">EN</a>
+            </div>
         </div>
-
-
-        <div class="panel-kart">
-            <div class="rower" id="Triatlonowy">
-                <h2>Triatlonowy</h2>
-                <div class="tresc">
-                    <div class="zdjecie-rower">
-                        <img src="triatlonowy.jpg" alt="Rower Triatlonowy">
-                    </div>
-                    <div class="tekst-rower">
-                        <p>Jest to odmiana roweru szosowego, przystosowana do zawodów triatlonowych. Rowery triatlonowe nastawione są na 
-                            pokonywanie jak najdłuższych dystansów w możliwie któtkim czasie. Z tego powodu większy nacisk kładzie się nie 
-                            na prędkość, lecz na wydajnośc jazdy, w tym  na aerodynamikę. Z tego powodu bardzo łatwo rozpoznać rower triatlonowy 
-                            gdyż posiada wypełnienia w kołach a także ramę, która przypomina bardziej skrzydło (jej przekrój jest owalem).
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="rower" id="Szosowy">
-                <h2>Szosowy</h2>
-                <div class="tresc">
-                    <div class="zdjecie-rower">
-                        <img src="szosowy.jpg" alt="Rower Szosowy">
-                    </div>
-                    <div class="tekst-rower">
-                        <p>Z uwagi na dłuższą obecność na rynku, ten typ roweru znany jest każdemu z nas. Rowerem szosowym określa się rower, z 
-                            cienkimi, aerodynamicznymi oponami, wysokimi przełożeniami i lekką konstukcją oraz obowiazkowym wręcz 
-                            barankiem (specyficznymi rączkami kierownicy które zmuszają do przyjęcia skulonej, opływowej pozycji 
-                            i wyglądają jak rogi barana). Pozwala osiągać wielkie prędkości i nadaje się do jazdy po utwardzonych drogach.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="rower" id="Transportowy">
-                <h2>Transportowy</h2>
-                <div class="tresc">
-                    <div class="zdjecie-rower">
-                        <img src="transportowy.jpg" alt="Rower Transportowy">
-                    </div>
-                    <div class="tekst-rower">
-                        <p> Odmiana rowrów, która w ostatnich latach zyskuje na popularności są tak zwane rowery transportowe. Często 
-                            są one rozbudowaną wersją rowerów miejskich, z nacisiem na możliwość transportu osób lub towaru. Przydatne szczeólnie 
-                            w mieście oferują dużą przestrzeń załadunkową niejednokrotnie zabudowaną. Choć nie są w stanie zawtąpić samochodu
-                            w każdej sytuacji, to biorąc pod uwagę wręcz obowiązkowe wspomanie, sprawdzą się idealnie jako transport dla 
-                            dzieci do przedszkola lub zamiast samochodu gdy trzeba będzie pojechać do sklepu po zakupy.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="rower" id="Miejski">
-                <h2>Miejski</h2>
-                <div class="tresc">
-                    <div class="zdjecie-rower">
-                        <img src="miejski.jpg" alt="Rower Miejski">
-                    </div>
-                    <div class="tekst-rower">
-                        <p>Dla niewprawnego oka, rower ten 
-                            będzie najpewniej określany jako "damka" - gdyż stawia na komfort jazdy, i niejednokrotnie oferuję ramę z 
-                            średnim lub niskim przekrokiem. Dla rowerów miejkich typowe jest też dodatkowe wyposażenie. Światła, dzwonek 
-                            blokada rowerowa lub nóżka to nic szczególnego. Bagażniki też są tutaj często stosowane. Ponadto, w celu zmiejszenia zaangażowania w dbanie o rower  typowe jest stosowanie rozwiązań mniej podatnych na uszkodzenia, nawet celem wydajność. Często spotamy się z  przerzutkami w piaście oraz napędem paskowych w droższych konstrukcjach. W odmianie rowerów popularnej w Holandii  (tzw. rowery holenderskie) typowe jest też używanie piast z wbuduwanym hamulcem używanym poprzez przekręcenie 
-                            pedałów w tył.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="rower" id="Gravel">
-                <h2>Gravel</h2>
-                <div class="tresc">
-                    <div class="zdjecie-rower">
-                        <img src="gravel.jpg" alt="Rower Gravel">
-                    </div>
-                    <div class="tekst-rower">
-                        <p>Najnowszy twór w świecie rowerów. Szczególną charakterystyką tych rowerów jest próba połączenia największych 
-                            skrajności - rowerów Enduro i Szosowych - w celu stworzenia bardziej wszechstronnej maszyny. Rezultatem, jest 
-                            rower, którego rama jest lekke i opływowa, natomiast napęd i opony umożliwiaj jazdę po nieutwardzonych nawierzchniach. 
-                            Dzięki temu mamy większą dowolność w wyborze trasy, i niestraszne są nam nieutwardzone ścieżki leśnie, a przy tym 
-                            nie tracimy zalet rowerów szosowych takich jak niskie opory toczenia czy opływowość. Takie rowery świetnie sprawdzaja 
-                            sie również na dłuższych wycieczkach, gdyż często posiadają dodatkowe mocowania na bagaż umożliwiajc jazdy na długie 
-                            trasy ze wszystkimi potrzebnymi rzeczami.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="rower" id="XC">
-                <h2>XC - Crosscountry</h2>
-                <div class="tresc">
-                    <div class="zdjecie-rower">
-                        <img src="xc.jpg" alt="Rower Cross Country (XC)">
-                    </div>
-                    <div class="tekst-rower">
-                        <p>Rowery crossowe, tzw. XC (od nazwy zawodów dla których zostały przygotowane) są najniższą z katerorii rowerów 
-                            które zaliczane są do rowerów górskich. Ponieważ wywodzą sie z zawodów przełajowych ich charakterystyka 
-                            odpowiada rowerom zawodniczym. Mamy wiec minimalną amortyzację (przez lata była to tylko amortyzacja na przedni 
-                            widelec), duże, lekkei koła o niskich oporach toczenia, a także lekką i wąska ramę. Tutaj zauważalnie inny jest 
-                            też kąt nachylenia widelca, który wymusza większe pochylenie, trochę jak na rowerach szosowych. Cechą szczególną tych
-                            maszyn jest również ich niska waga.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="rower" id="Trail">
-                <h2>Trail</h2>
-                <div class="tresc">
-                    <div class="zdjecie-rower">
-                        <img src="trail.jpg" alt="Rower Trailowy">
-                    </div>
-                    <div class="tekst-rower">
-                        <p>Rowery trailowe przypominają najbardziej rowery enduro. Stawiaja one jednak bardziej nacisk na długość trasy 
-                            i mobilność niż możliwości pokonywania najtrudniejszych przeszkód. Z tego powodu często są też tańsze, gdyż użyte 
-                            komponenty maja mniejsze wymagania wytrzymałościowe a w konsekwencji sprawiają, że rower jest też lżejszy. 
-                            Dzięki temu stanowią świetną alternatywę dla zarówno rowerów XC (od których są bardziej wszechstronne, gdyż 
-                            umożliwiaja jazdę w trudniejszym terenie) jak i Enduro (zwględem których są lżejsze i tańsze, a geometria jest 
-                            mniej agresywna i wygodniejsza na długie przejażdżki).
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="rower" id="Enduro">
-                <h2>Enduro</h2>
-                <div class="tresc">
-                    <div class="zdjecie-rower">
-                        <img src="enduro.jpg" alt="Rower Enduro">
-                    </div>
-                    <div class="tekst-rower">
-                        <p>Rowery enduro służą do jazdy w trudnym terenie z zachowaniem możliwości jazdy zarówno zjazdowej jaki podjazdowej. 
-                            Mocne hamulce, duży skok amortyzacji i opony z agresywnym bieżnikiem gwarantują większą kontrolę podczas zjazdów, 
-                            w porównaniu do maszyn Trailowych. W utrzymaniu stabilności pomaga bardziej skośny kąd przedniego widelca. Natomiast 
-                            w przeciwieństiwe do rowerów Downhillowych, oferują one szeroki zakres przełożeń i bardziej pionowa pozycję podzczas 
-                            siedzenia w celu umożliwienia dłuższych przejazdów i pokonywania długich tras górskich.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="rower" id="Downhill">
-                <h2>Downhill </h2>
-                <div class="tresc">
-                    <div class="zdjecie-rower">
-                        <img src="downhill.jpg" alt="Rower Downhill">
-                    </div>
-                    <div class="tekst-rower">
-                        <p>Rowery downhillowe, zgodnie z nazwą służą tylko do jednego celu - jazdy w dół. Z tego powodu wszystkie elementy 
-                            konstrukcyjne i rozwiązania techniczne mają na celu poprawę doświadczenia ze zjazdów. Typowo, rowery te wyposażone są 
-                            olbrzmi przedni amortyzator, przypominający ten który możemy znaleźć w motorach crossowych. Ponieważ maszyny te 
-                            są ciężkie i napędzane siłą grawitacji przerzutki i napęd są tutaj słabo rozbudowane i służą bardziej przejazdom 
-                            na krótkich dystansach pomiędzy spadkami, lub na koniec zjazdu do wyciągu.
-                        </p>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <script src="functionality.js"></script>
-
     </body>
 </html>
