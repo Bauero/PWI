@@ -230,7 +230,7 @@ header {
         display: none;
     }
     .menu-list{
-        width: 300%;
+        width: 100vw;
     }
     
 }
