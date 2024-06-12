@@ -3,7 +3,6 @@
 p { margin: 0 }
 
 body {
-    min-width: 480px;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -70,6 +69,7 @@ header {
     position: absolute;
     background-color: #494949;
     z-index: 1000;
+    width: 100%;
 }
 
 
@@ -228,9 +228,6 @@ header {
     }
     .menu {
         display: none;
-    }
-    .menu-list{
-        width: 100vw;
     }
     
 }
