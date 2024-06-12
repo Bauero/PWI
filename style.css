@@ -129,7 +129,12 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    justify-content: space-between;
     padding: 0 20px;
+}
+
+.copyright {
+    text-align: left;
 }
 
 .jezyki {
