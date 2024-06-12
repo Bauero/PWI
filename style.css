@@ -69,7 +69,6 @@ header {
     align-content: center;
     position: absolute;
     background-color: #494949;
-    width: 100%;
     z-index: 1000;
 }
 
@@ -229,6 +228,9 @@ header {
     }
     .menu {
         display: none;
+    }
+    .menu-list{
+        width: 300%;
     }
     
 }
